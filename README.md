@@ -6,4 +6,7 @@ I trained this data with different algorithms then created  a GUI that allows yo
 Below, there are is a link to the dataset. There is also a link to some YouTube videos that helped me with this project.
 
 Data: https://www.kaggle.com/aaron7sun/stocknews
-Useful tutorial(s): https://www.youtube.com/watch?v=ReakZVh2Xwk&list=PLQVvvaa0QuDf2JswnfiGkliBInZnIC4HL&index=14 , https://www.youtube.com/watch?v=bPYJi1E9xeM&t=487s
+Useful tutorial(s): 
+- The Semicolon : https://www.youtube.com/watch?v=ReakZVh2Xwk&list=PLQVvvaa0QuDf2JswnfiGkliBInZnIC4HL&index=14 
+- Sentdex : https://www.youtube.com/watch?v=bPYJi1E9xeM&t=487s
+
