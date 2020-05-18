@@ -12,4 +12,4 @@ Useful tutorial(s):
 - The Semicolon : https://www.youtube.com/watch?v=ReakZVh2Xwk&list=PLQVvvaa0QuDf2JswnfiGkliBInZnIC4HL&index=14 
 - Sentdex : https://www.youtube.com/watch?v=bPYJi1E9xeM&t=487s
 
-![Demo](prediction applicaton.gif)
+![Demo](Reddit-and-DJIA-Prediction/prediction applicaton.gif)
