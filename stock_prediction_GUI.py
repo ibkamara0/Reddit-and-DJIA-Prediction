@@ -2,6 +2,8 @@
 # Import module for loading and saving our classifiers
 import pickle
 import tkinter as tk
+from tkinter import *
+
 # Import modules for our GUI
 import tkinter.messagebox
 # import different mathematical tools for analyzing our data
@@ -26,7 +28,7 @@ class VoteClassifier(ClassifierI):
 
         # Return whichever classification has the most votes with confidence
         confidence = (votes.count(mode(votes))) / len(votes)
-        print(mode(votes), confidence)
+        return mode(votes), confidence
 
 
 def get_classifiers():
@@ -90,10 +92,42 @@ def get_input():
         return transform_data(df_headline.iloc[0])
 
 
+# Creating my own custom pop up
+def alert(text, positive):
+    popup = tk.Toplevel()
+
+    popup.title("Our Prediction!")
+
+    # If positive we use the positive Spongebob image
+    if positive:
+        photo = PhotoImage(file="positive.png")
+    else:
+        photo = PhotoImage(file="negative.png")
+
+    # Creates different widgets in the window
+    img = Label(popup, image=photo)
+    img.image = photo
+    img.grid(sticky=E, padx=5, pady=5, column=0)
+
+    Label(popup, text=text).grid(padx=5, pady=5, column=1,row=0)
+
+
 def get_prediction():
     # Creating a vote classifier object
     vote_classifier = VoteClassifier(get_classifiers())
-    return vote_classifier.predict(get_input())
+    vote, confidence = vote_classifier.predict(get_input())
+    conf_percentage = float(confidence * 100)
+
+    # Depending on the amount of confidence and classification give statement
+    if conf_percentage >= 75:
+        verbal_conf = "high"
+    else:
+        verbal_conf = "moderate"
+    if vote == 1:
+        alert(f"We have {verbal_conf} confidence\n that the value will rise or stay "
+              f"the same", True)
+    else:
+        alert(f"We have {verbal_conf} confidence\n that the value will decrease", False)
 
 
 # GUI creation
